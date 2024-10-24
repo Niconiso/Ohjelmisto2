@@ -1,4 +1,4 @@
-class Auto:
+''' class Auto:
     def __init__(self, rekkari, hnopeus):
         self.rekisteritunnus = rekkari
         self.huippunopeus = hnopeus
@@ -27,4 +27,13 @@ kaara = Auto("ABC-123", 142)
 kaara.matka = 2000
 kaara.kiihdytä(60)
 kaara.kulje(1.5)
-kaara.tiedot()
+kaara.tiedot() '''
+
+class Auto:
+    def __init__(self, rekkari):
+        self.rekkari = rekkari
+    def tulosta_rekkari(self):
+        print(f"Rekkari: {self.rekkari}")
+
+Auto("ABC-123")
+Auto("ZYX-789")
