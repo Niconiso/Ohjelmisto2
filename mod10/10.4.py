@@ -45,5 +45,5 @@ while not kilpailu.kilpailu_ohi():
         print(f"\nTunti {tunti}")
         kilpailu.tulosta_tilanne()
 
-print("\nKilpailu päättyi!")
+print("Kilpailu päättyi")
 kilpailu.tulosta_tilanne()
