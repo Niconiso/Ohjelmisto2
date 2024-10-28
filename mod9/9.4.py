@@ -36,6 +36,6 @@ while kilpailu:
             kilpailu = False
             break
 
-print(f"{'Rekkari':<10} {'Huippunopeus':<15} {'Nopeus':<10} {'Matka':<10}")
+print(f"{'Rekkari':<10} {'Huippunopeus':<10} {'Nopeus':<10} {'Matka':<10}")
 for auto in kaara:
     print(f"{auto.rekkari:<10} {auto.huippunopeus:<15} {auto.Tnopeus:<10} {auto.matka:<10}")
