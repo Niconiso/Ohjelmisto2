@@ -8,15 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omat (parhaat) kissat</title>
     <script src="nettisivu.html" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="preload" href="kissat2.webp" as="image">
     <link rel="preload" href="kissat.webp" as="image">
     <link rel="preload" href="Khan.webp" as="image">
     <link rel="preload" href="Gladio.webp" as="image">
-    <link rel="preload" href="backgroundgif.gif" as="image">
+    <link rel="preload" href="backgroundgif.webm" as="image">
+    <link rel="preconnect" href="backgroundgif.webm">
     <style>
         body, h1, p {
             font-family: 'Roboto Mono', monospace;
-            background-color: #9891bf96;
+            background-color: #AEBBC1;
             color: black;
             margin: 0;
             padding: 0;
@@ -29,68 +31,142 @@
             background-attachment: fixed;
         }
         nav {
-            background-color: #9891bf96;
-            color: black;
+            background-color: #AEBBC1;
             padding: 1em;
             text-align: center;
         }
-        #home h1, #home p, .home-image {
-            text-align: center;
-            display: block;
+        nav {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #AEBBC1;
+            padding: 1em;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .logo {
+            position: absolute;
+            left: 20px;
+            height: 40px;
+        }
+        .container {
+            width: 90%;
             margin: 0 auto;
+        }
+        .section {
+            padding: 50px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        #Koti{
+            text-align: center;
+        }
+        #Koti img {
             width: 300px;
             height: auto;
+            margin-top: 20px;
         }
-    </style>
-
-    <style>
-        .container{width:90%;margin:0 auto}h1,h2{color:black}.section{padding:50px 0;border-bottom:1px solid #ddd}#kissat h2{text-align:center}.kissat{display:flex;justify-content:space-between;gap:20px}.kissat-item{width:30%;text-align:center}.kissat-item img{width:100%;height:auto}.contact-info{text-align:center;background-color:black;color:white;padding:20px;border-radius:10px}footer{text-align:center;padding:20px;background-color:#006644;color:white}
+        #Kissat {
+            text-align: center;
+        }
+        .kissat {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .kissat-item {
+            width: 30%;
+            text-align: center;
+        }
+        .kissat-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        #kontaktit {
+            text-align: center;
+            padding: 30px;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .contact-info {
+            width: 45%;
+            text-align: left;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 2px;
+        }
+        .contact-container iframe {
+            width: 50%;
+            height: 450px;
+            border-radius: 2px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #006644;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#kissat">Kissat</a>
-            <a href="#contact">Contact</a>
+            <img src="catlogo.png" alt="Logokuva" class="logo">
+            <a href="#Koti">Koti</a>
+            <a href="#Kissat">Kissat</a>
+            <a href="#kontaktit">Kontaktit</a>
         </nav>
     </header>
 
     <main>
-        <div id="home" class="section container">
+        <div id="Koti" class="section container">
             <h1>Teretulemast sivulle</h1>
             <p>Minun kissat ovat täällä</p>
             <img src="kissat2.webp" srcset="kissat2-small.webp 300w, kissat2.webp 600w" sizes="(max-width: 600px) 300px, 600px" alt="kissat partsilla" class="home-image">
         </div>
 
-        <div id="kissat" class="section container">
+        <div id="Kissat" class="section container">
             <h2>Kissat</h2>
             <div class="kissat">
                 <div class="kissat-item">
                     <img src="kissat.webp" srcset="kissat-small.webp 300w, kissat.webp 600w" sizes="(max-width: 600px) 300px, 600px" alt="Parhaat kissat" loading="lazy">
-                    <h2>Kummatkin kissat</h2>
+                    <h3>Kummatkin kissat</h3>
                     <p>Nuoret pojat, 5 ja 6 vuotiaita</p>
                 </div>
                 <div class="kissat-item">
                     <img src="Khan.webp" srcset="Khan-small.webp 300w, Khan.webp 600w" sizes="(max-width: 600px) 300px, 600px" alt="Parempi kissa" loading="lazy">
-                    <h2>Vanhempi kissa</h2>
+                    <h3>Ensimäinen kissa</h3>
                     <p>... ja myös komeampi</p>
                 </div>
                 <div class="kissat-item">
                     <img src="Gladio.webp" srcset="Gladio-small.webp 300w, Gladio.webp 600w" sizes="(max-width: 600px) 300px, 600px" alt="Tyhmempi kissa" loading="lazy">
-                    <h2>Nuorempi kissa</h2>
+                    <h3>Toinen kissa</h3>
                     <p>...joka on daiju</p>
                 </div>
             </div>
         </div>
-
-        <div id="contact" class="section container">
+        
+        <div id="kontaktit" class="section container">
             <h2>Kontaktit</h2>
-            <div class="contact-info">
-                <p>Tässä on kontakti infot:</p>
-                <p>Höpönlöpön pöppöötä</p>
-                <p>Sähköposti: <a href="mailto:blaablaablaa@metropolia.fi" style="color: white;" rel="noopener noreferrer">blaablaablaa@metropolia.fi</a></p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.3856342944646!2d24.758513900000004!3d60.2239959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df797cfe43cbb%3A0xb99a2c26d4df39ff!2sMetropolia%20University%20of%20Applied%20Sciences%20-%20Karamalmi%20Campus!5e0!3m2!1sen!2sfi!4v1729771146725!5m2!1sen!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Sivu:</p>
+                    <p>Kissasivu<br>Karaportti 2<br>02340 ESPOO<br>Suomi</p>
+                    <p>Email: <a href="mailto:blaablaablaa@metropolia.fi" style="color: white;" rel="noopener noreferrer">blaablaablaa@metropolia.fi</a></p>
+                    <p>Phone: <a href="tel:+358412345678" style="color: white;">+358 (0)412345678</a></p>
+                </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.3856342944646!2d24.758513900000004!3d60.2239959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df797cfe43cbb%3A0xb99a2c26d4df39ff!2sMetropolia%20University%20of%20Applied%20Sciences%20-%20Karamalmi%20Campus!5e0!3m2!1sen!2sfi!4v1729771146725!5m2!1sen!2sfi" width="100%" height="450" style="border:0; margin-top: 20px;" allowfullscreen="" loading="lazy" title="kartta" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </main>
