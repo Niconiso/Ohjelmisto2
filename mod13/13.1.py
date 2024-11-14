@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, json
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 def alkuluku(n):
@@ -8,10 +8,19 @@ def alkuluku(n):
         return True
     if n % 2 == 0 or n % 3 == 0:
         return False
-@app.route('/alkuluku/<int:numero>', methods=['GET'])
-def Alkulukucheck(numero):
-    result = {"Numero": numero, "On alkuluku": alkuluku(numero)}
-    return jsonify(result)
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
+@app.route('/alkuluku/<int:numero>', methods=['GET'])
+def alkuluku_check(numero):
+    result = {
+        "numero": numero,
+        "on_alkuluku": alkuluku(numero)
+    }
+    return jsonify(result)
 if __name__ == '__main__':
     app.run(debug=True, port=3000)
