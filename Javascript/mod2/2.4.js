@@ -6,7 +6,6 @@ while (true) {
    }
    numbers.push(num);
 }
-
 numbers.sort((a, b) => b - a);
 console.log("Numerot suurimmasta pienimpään:");
 for (let number of numbers) {
