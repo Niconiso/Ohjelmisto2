@@ -18,6 +18,6 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
             resultsDiv.appendChild(article);
         });
     } catch (error) {
-        console.error("error:", error);
+        console.error("Äe toimi", error);
     }
 });

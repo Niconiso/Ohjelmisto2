@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuck Norris</title>
 </head>
 <body>
+    <h1>Vitsit</h1>
+    <form id="jokeForm">
+        <label for="query">Etsi termillä (englanniksi):</label>
+        <input id="query" name="q" type="text" required>
+        <button type="submit">Etsi</button>
+    </form>
+    <div id="results"></div>
 
+    <script>
+        document.getElementById('jokeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const query = document.getElementById('query').value;
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+
+            fetch(`https://api.chucknorris.io/jokes/search?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result && data.result.length > 0) {
+                        data.result.forEach(joke => {
+                            const article = document.createElement('article');
+                            const paragraph = document.createElement('p');
+                            paragraph.textContent = joke.value;
+                            article.appendChild(paragraph);
+                            resultsContainer.appendChild(article);
+                        });
+                    } else {
+                        resultsContainer.innerHTML = '<p>Ei löydy vitsejä.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Äe toimi');
+                });
+        });
+    </script>
 </body>
 </html>
